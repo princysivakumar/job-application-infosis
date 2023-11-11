@@ -12,7 +12,13 @@
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
   <!-- Custom styles for this template -->
   <link href="styles.css" rel="stylesheet">
-  <script src="index.js"></script>
+  
+  <!-- Your existing script tags -->
+<script src="path/to/jquery/jquery.min.js"></script>
+<script src="path/to/bootstrap/js/bootstrap.min.js"></script>
+
+<script src="index.js"></script>
+
   <style>
     
 </style>
@@ -24,20 +30,20 @@
         <div class="container-fluid">
             <div class=" row">
                 <!-- Left Icons -->
-                <div class="col-md-2">
-                    <img src="../job-application-app/images/icon-waffle.png" alt="waffle icon" >
-                    <img src="../job-application-app//images/icon_linkedin.png" alt="linkedIn icon">
+                <div class="col-2">
+                    <img src="../job-application-infosis/images/icon-waffle.png" alt="waffle icon"  width="30" height="30">
+                    <img src="../job-application-infosis/images/icon_linkedin.png" alt="linkedIn icon">
                 </div>
                 <!-- Centered Search Bar -->
-                <div class="col-md-4 ">
+                <div class="col-4 ">
                     <div class="search-bar">
                         <input type="text" class="form-control" placeholder="Search...">
                     </div>
                 </div>
                 <!-- Right Profile Picture -->
-                <div class="col-md-2">
-                    <img src="../job-application-app/images/Group 11259.png" alt="notify icon">
-                    <img src="../job-application-app/images/Mask Group 179.png" alt="notify icon">
+                <div class="col-2">
+                    <img src="../job-application-infosis/images/Group 11259.png" alt="notify icon">
+                    <img src="../job-application-infosis/images/Mask Group 179.png" alt="notify icon">
                 </div>
             </div>
         </div>
@@ -68,7 +74,7 @@
     </div> -->
 
     <div class="container-fluid">
-        <h3>Create job request .</h3>
+        <h3>Create job request</h3>
         <div class="row">
             <!-- Left Side -->
             <div class="col-md-8">
@@ -132,26 +138,146 @@
                 </div>
 
                 <!-- Second Card with Educational Requirements -->
+               
+                <!-- <div class="card">
+                    <div class="card-title">Educational Requirements</div>
+                    <table class="table" id="educationalTable">
+                        <thead>
+                            <tr>
+                                <th>Educational</th>
+                                <th>Field of Education</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td contenteditable="true">Bachelor's Degree</td>
+                                <td contenteditable="true">Computer Science</td>
+                                <td>
+                                    <button type="button" class="btn btn-sm btn-danger delete-row">
+                                        <i class="bi bi-trash"></i>
+                                    </button>
+                                    <button type="button" class="btn btn-sm btn-primary edit-row">
+                                        <i class="bi bi-pencil"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <button type="button" class="btn btn-success" id="addRowBtn">Add Row</button>
+                </div> -->
+
                 <div class="card">
                     <div class="card-title">Educational Requirements</div>
-                    <!-- Add your educational requirements content here -->
+                    <table class="table" id="educationalTable">
+                        <thead>
+                            <tr>
+                                <th>Educational</th>
+                                <th>Field of Education</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Sample row -->
+                            <tr>
+                                <td contenteditable="true">Bachelor's Degree</td>
+                                <td contenteditable="true">Computer Science</td>
+                                <td>
+                                    <button type="button" class="btn btn-sm btn-danger delete-row">
+                                        <i class="bi bi-trash"></i>
+                                    </button>
+                                    <button type="button" class="btn btn-sm btn-primary edit-row" data-toggle="modal" data-target="#editModal">
+                                        <i class="bi bi-pencil"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <button type="button" class="btn btn-success" id="addRowBtn">Add Row</button>
                 </div>
+                
+                <!-- Modal for Editing -->
+                <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="editModalLabel">Edit Education Details</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <form id="editForm">
+                                    <div class="form-group">
+                                        <label for="editEducational">Educational</label>
+                                        <input type="text" class="form-control" id="editEducational">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="editFieldOfEducation">Field of Education</label>
+                                        <input type="text" class="form-control" id="editFieldOfEducation">
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                    
+               
             </div>
 
             <!-- Right Side -->
             <div class="col-md-4">
                 <!-- Preferred Channels Card -->
+               
+
+
+
                 <div class="card">
-                    <div class="card-title">Preferred Channels</div>
-                    <!-- Add your preferred channels content here -->
+                    <div class="card-title">
+                        Preferred Channel
+                        <label class="switch float-right">
+                            <input type="checkbox" id="channelToggle">
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                    <div class="chips-container" id="chipsContainer">
+                        <!-- Sample chip -->
+                        <div class="chip">
+                            Chip Text
+                            <span class="chip-close" onclick="removeChip(this)">×</span>
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-success add-button" onclick="addChip()">Add Chip</button>
                 </div>
 
                 <!-- Support Team Card -->
                 <div class="card">
                     <div class="card-title">Support Team</div>
-                    <!-- Add your support team content here -->
+                    <ul class="support-team-list">
+                        <!-- Sample member -->
+                        <li class="support-team-member">
+                            <div class="initials-mask">JD</div>
+                            <div class="person-name">John Doe</div>
+                            <div class="email-icon">&#128231;</div>
+                            <div class="phone-icon">&#128222;</div>
+                        </li>
+                        <li class="support-team-member">
+                            <div class="initials-mask">JD</div>
+                            <div class="person-name">John Doe</div>
+                            <div class="email-icon">&#128231;</div>
+                            <div class="phone-icon">&#128222;</div>
+                        </li>
+                        <!-- Add more members as needed -->
+                    </ul>
+                    <div class="view-more" onclick="showMore()">View More</div>
                 </div>
             </div>
+        </div>
+
+        <div class="buttons-container">
+            <button type="button" class="btn submit-btn" onclick="submitForm()">Submit</button>
+            <button type="button" class="btn cancel-btn" onclick="cancelAction()">Cancel</button>
         </div>
     </div>
 
@@ -165,9 +291,15 @@
 
 
 <!-- Load jQuery -->
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script> -->
 
 <!-- Bootstrap core JavaScript -->
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> -->
+
+
+<!-- Your existing script tags -->
+<!-- <script src="path/to/jquery/jquery.min.js"></script>
+<script src="path/to/bootstrap/js/bootstrap.min.js"></script> -->
+
 </body>
 </html>
