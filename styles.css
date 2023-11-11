@@ -1,0 +1,35 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    background-color: #8626c3;
+    color: white;
+    padding: 18px;
+    /* text-align: center;
+    display: flex;
+    justify-content: center; */
+
+}
+
+.row{
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+.header img {
+    border-radius: 50%;
+    height: 50px;
+}
+
+.search-bar {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    /* margin-top: 15px; */
+    ali
+    width: 500px;
+}
