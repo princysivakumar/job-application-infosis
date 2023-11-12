@@ -7,15 +7,17 @@
   <meta name="author" content="Princy">
   <!-- <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico"> -->
   <title>Job Application</title>
-  <!-- <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/pricing/"> -->
   <!-- Bootstrap core CSS -->
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
   <!-- Custom styles for this template -->
   <link href="styles.css" rel="stylesheet">
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+WyBPLmxqDPaIqd1a2qjZEPL95owY2z1zA8" crossorigin="anonymous"> -->
+
   
   <!-- Your existing script tags -->
-<script src="path/to/jquery/jquery.min.js"></script>
-<script src="path/to/bootstrap/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<!-- <script src="path/to/bootstrap/js/bootstrap.min.js"></script> -->
+
 
 <script src="index.js"></script>
 
@@ -27,91 +29,67 @@
 <body>
      <!-- Header -->
     <div class="header">
-        <div class="container-fluid">
-            <div class=" row">
-                <!-- Left Icons -->
-                <div class="col-2">
-                    <img src="../job-application-infosis/images/icon-waffle.png" alt="waffle icon"  width="30" height="30">
-                    <img src="../job-application-infosis/images/icon_linkedin.png" alt="linkedIn icon">
+       
+            <div class="row header-container">
+                <div class="col-3 d-flex justify-content-start align-items-center">
+                   <div> <img  src="../job-application-infosis/images/icon-waffle.png" alt="waffle icon" ></div>
+                    <div class="ml-3"><img  src="../job-application-infosis/images/icon_linkedin.png" alt="linkedIn icon"></div>
+                    
                 </div>
-                <!-- Centered Search Bar -->
-                <div class="col-4 ">
+                <div class="col-6 d-flex justify-content-center ">
                     <div class="search-bar">
                         <input type="text" class="form-control" placeholder="Search...">
                     </div>
                 </div>
-                <!-- Right Profile Picture -->
-                <div class="col-2">
-                    <img src="../job-application-infosis/images/Group 11259.png" alt="notify icon">
-                    <img src="../job-application-infosis/images/Mask Group 179.png" alt="notify icon">
+                <div class="col-3 d-flex justify-content-end align-items-center">
+                    <div><img src="../job-application-infosis/images/Group 11259.png" alt="notify icon"></div>
+                    <div class=" ml-3"> <img src="../job-application-infosis/images/Mask Group 179.png" alt="notify icon"></div>
+                   
                 </div>
             </div>
-        </div>
+       
     </div>
 
-    <!-- <div class="container-fluid ">
-          <div class=" mx-10 my-3">
-    <div>Create job request</div>
-        <div class="row">
-            <div class="col-8">
-           
-                <section>
-                    <h2>Section 1</h2>
-                    <p>This is the content of section 1.</p>
-                    <hr>
-                 </section>
-            </div>
-            <div class="col-4">
-          
-                <section>
-                    <h2>Section 2</h2>
-                    <p>This is the content of section 2.</p>
-                    <hr>
-                 </section>
-            </div>
-        </div>
-    </div>
-    </div> -->
-
-    <div class="container-fluid">
-        <h3>Create job request</h3>
-        <div class="row">
+    <div class="container2">
+        <form  id="jobDetailsForm" onsubmit="return validateJobDetailsForm()">
+        <div style="font-size: 20px; font-weight: bold; margin-top: 15px; ">Create job request</div>
+       
+        
+       
+        <div class="row mt-3">
             <!-- Left Side -->
             <div class="col-md-8">
                 <!-- First Card with Job Form -->
-                <div class="card">
-                    <div class="card-title">Job Details</div>
-                    <!-- Job Title and Email Row -->
+                <div class="card" >
+                    
                     <div class="row">
                         <div class="col-md-6">
-                            <label for="jobTitle">Job Title</label>
-                            <input type="text" class="form-control" id="jobTitle">
+                            <div class="title"  for="jobTitle">Job title</div>
+                            <input type="text" class="form-control custom-form-control" id="jobTitle" required>
                         </div>
                         <div class="col-md-6">
-                            <label for="email">Email</label>
-                            <input type="email" class="form-control" id="email">
+                            <div class="title"  for="email">Email</div>
+                            <input type="email" class="form-control custom-form-control" id="email" required>
                         </div>
                     </div>
-                    <!-- Request Date, Time, and Location Row -->
-                    <div class="row">
-                        <div class="col-md-4">
-                            <label for="requestDate">Request Date</label>
-                            <input type="date" class="form-control" id="requestDate">
+                    <div class="row mt-4">
+                        <div class="col-md-4 ">
+                            <div class="title"  for="requestDate">Request Date</div>
+                            <input type="date" class="form-control custom-form-control" id="requestDate" required>
                         </div>
                         <div class="col-md-4">
-                            <label for="requestTime">Request Time</label>
-                            <input type="time" class="form-control" id="requestTime">
+                            <div class="title"  for="requestTime">Time</div>
+                            <input type="time" class="form-control custom-form-control" id="requestTime" required>
                         </div>
                         <div class="col-md-4">
-                            <label for="location">Location</label>
-                            <input type="text" class="form-control" id="location">
+                            <div class="title"  for="location">Location</div>
+                            <input type="text" class="form-control custom-form-control" id="location" required>
                         </div>
                     </div>
-                    <!-- Quarter and State Row -->
-                    <div class="row">
-                        <div class="col-md-6">
-                            <label for="quarter">Quarter</label>
-                            <select class="form-control" id="quarter">
+                    <div class="row mt-4">
+                        <div class="col-md-6 ">
+                            <div class="title"  for="quarter">Quarter</div>
+                            <select class="form-control custom-form-control" id="quarter" required>
                                 <option value="Q1">Q1</option>
                                 <option value="Q2">Q2</option>
                                 <option value="Q3">Q3</option>
@@ -119,109 +97,58 @@
                             </select>
                         </div>
                         <div class="col-md-6">
-                            <label for="state">State</label>
-                            <input type="text" class="form-control" id="state">
+                            <div class="title"  for="state">State <img src="../job-application-infosis/images/icon-info.png" alt=""></div>
+                            <input type="text" class="form-control custom-form-control" id="state" required>
                         </div>
                     </div>
-                    <!-- Primary Skills Row -->
-                    <div class="row">
-                        <div class="col-md-12">
-                            <label>Primary Skills</label><br>
-                            <label class="form-check-inline">
-                                <input type="radio" name="skills" class="form-check-input" value="React"> React
-                            </label>
-                            <label class="form-check-inline">
-                                <input type="radio" name="skills" class="form-check-input" value="Angular"> Angular
-                            </label>
+                    <div class="row mt-4">
+                        <div class="col-md-12 " >
+                            <div class="title" >Primary Skills</div><br>
+                            <div class="form-check-inline">
+                                <input type="radio" name="skills" class="form-check-input"  value="React" id="primarySkills" > React
+                            </div>
+                            <div class="form-check-inline">
+                                <input type="radio" name="skills" class="form-check-input" value="Angular"  id="primarySkills"> Angular
+                            </div>
                         </div>
                     </div>
+
+                    <div class="error-message" id="jobDetailsErrorMessage"></div>
                 </div>
 
                 <!-- Second Card with Educational Requirements -->
                
-                <!-- <div class="card">
-                    <div class="card-title">Educational Requirements</div>
-                    <table class="table" id="educationalTable">
-                        <thead>
-                            <tr>
-                                <th>Educational</th>
-                                <th>Field of Education</th>
-                                <th>Action</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td contenteditable="true">Bachelor's Degree</td>
-                                <td contenteditable="true">Computer Science</td>
-                                <td>
-                                    <button type="button" class="btn btn-sm btn-danger delete-row">
-                                        <i class="bi bi-trash"></i>
-                                    </button>
-                                    <button type="button" class="btn btn-sm btn-primary edit-row">
-                                        <i class="bi bi-pencil"></i>
-                                    </button>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <button type="button" class="btn btn-success" id="addRowBtn">Add Row</button>
-                </div> -->
-
                 <div class="card">
                     <div class="card-title">Educational Requirements</div>
                     <table class="table" id="educationalTable">
                         <thead>
                             <tr>
-                                <th>Educational</th>
-                                <th>Field of Education</th>
-                                <th>Action</th>
+                                <th class="no-border-top" style=" font-size: 14px;">Educational</th>
+                                <th class="no-border-top" style=" font-size: 14px;">Field of Education</th>
+                                <th class="no-border-top" style=" font-size: 14px;">Action</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <!-- Sample row -->
-                            <tr>
-                                <td contenteditable="true">Bachelor's Degree</td>
-                                <td contenteditable="true">Computer Science</td>
-                                <td>
-                                    <button type="button" class="btn btn-sm btn-danger delete-row">
-                                        <i class="bi bi-trash"></i>
-                                    </button>
-                                    <button type="button" class="btn btn-sm btn-primary edit-row" data-toggle="modal" data-target="#editModal">
-                                        <i class="bi bi-pencil"></i>
-                                    </button>
+                            <tr >
+                                <td contenteditable="true" style=" font-size: 14px;">Bachelor's Degree</td>
+                                <td contenteditable="true" style=" font-size: 14px;">Computer Science</td>
+                                <td class="d-flex no-border-top">
+                                    <div  class="edit-row ">
+                                        <img src="../job-application-infosis/images/icon-edit.png" alt="edit">
+                                    </div>
+                                    <div class="delete-row pl-3">
+                                        <img src="../job-application-infosis/images/icon-trash.png" alt="delete">
+                                    </div>
+                                   
                                 </td>
                             </tr>
                         </tbody>
                     </table>
-                    <button type="button" class="btn btn-success" id="addRowBtn">Add Row</button>
+
+                    <div class=" ml-2"  id="addRowBtn" style="font-size: small;"> <img class="mr-1" src="../job-application-infosis/images/icon-add-big.png" alt="add" width="15"> Add New</div>
                 </div>
-                
-                <!-- Modal for Editing -->
-                <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="editModalLabel">Edit Education Details</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
-                                <form id="editForm">
-                                    <div class="form-group">
-                                        <label for="editEducational">Educational</label>
-                                        <input type="text" class="form-control" id="editEducational">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="editFieldOfEducation">Field of Education</label>
-                                        <input type="text" class="form-control" id="editFieldOfEducation">
-                                    </div>
-                                    <button type="submit" class="btn btn-primary">Save Changes</button>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+
+             
                     
                
             </div>
@@ -229,77 +156,58 @@
             <!-- Right Side -->
             <div class="col-md-4">
                 <!-- Preferred Channels Card -->
-               
-
-
-
                 <div class="card">
                     <div class="card-title">
-                        Preferred Channel
-                        <label class="switch float-right">
-                            <input type="checkbox" id="channelToggle">
-                            <span class="slider round"></span>
-                        </label>
+                        <div class="custom-control custom-switch">
+                            <input type="checkbox" class="custom-control-input" id="channelToggle">
+                            <label class="custom-control-label" for="channelToggle">Preferred channel</label>
+                          </div>
                     </div>
                     <div class="chips-container" id="chipsContainer">
                         <!-- Sample chip -->
                         <div class="chip">
                             Chip Text
-                            <span class="chip-close" onclick="removeChip(this)">×</span>
+                            <img class="chip-close"  onclick="removeChip(this)" src="../job-application-infosis/images/icon-close.png" alt="">
                         </div>
                     </div>
-                    <button type="button" class="btn btn-success add-button" onclick="addChip()">Add Chip</button>
+
+                    <div class=" ml-2 mt-3"  id="addRowBtn" style="font-size: small;" onclick="addChip()"> <img class="mr-1" src="../job-application-infosis/images/icon-add-big.png" alt="add" width="15"> Add New</div>
                 </div>
 
                 <!-- Support Team Card -->
                 <div class="card">
-                    <div class="card-title">Support Team</div>
+                    <div class="card-title">Support team</div>
                     <ul class="support-team-list">
-                        <!-- Sample member -->
                         <li class="support-team-member">
-                            <div class="initials-mask">JD</div>
-                            <div class="person-name">John Doe</div>
-                            <div class="email-icon">&#128231;</div>
-                            <div class="phone-icon">&#128222;</div>
+                            <div class="initials-mask">JS</div>
+                            <div class="person-name ">Jancy Sivakumar</div>
+                            <div>
+                                <img src="../job-application-infosis/images/icon-mail.png" alt="">
+                                <img class=" ml-2" src="../job-application-infosis/images/icon-call.png" alt="">
+                            </div>
                         </li>
                         <li class="support-team-member">
-                            <div class="initials-mask">JD</div>
-                            <div class="person-name">John Doe</div>
-                            <div class="email-icon">&#128231;</div>
-                            <div class="phone-icon">&#128222;</div>
+                            <div class="initials-mask">PS</div>
+                            <div class="person-name">Princy Sivakumar</div>
+                        <div>
+                            <img src="../job-application-infosis/images/icon-mail.png" alt="">
+                            <img class=" ml-2" src="../job-application-infosis/images/icon-call.png" alt="">
+                        </div>
                         </li>
-                        <!-- Add more members as needed -->
                     </ul>
+
+                   
                     <div class="view-more" onclick="showMore()">View More</div>
                 </div>
             </div>
         </div>
 
         <div class="buttons-container">
-            <button type="button" class="btn submit-btn" onclick="submitForm()">Submit</button>
+            <button type="submit" class="btn submit-btn" >Submit</button>
             <button type="button" class="btn cancel-btn" onclick="cancelAction()">Cancel</button>
         </div>
+    </form>
     </div>
-
-
- 
-     
-    
-
-
-
-
-
-<!-- Load jQuery -->
-<!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script> -->
-
-<!-- Bootstrap core JavaScript -->
-<!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> -->
-
-
-<!-- Your existing script tags -->
-<!-- <script src="path/to/jquery/jquery.min.js"></script>
-<script src="path/to/bootstrap/js/bootstrap.min.js"></script> -->
 
 </body>
 </html>

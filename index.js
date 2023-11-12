@@ -3,16 +3,16 @@ $(document).ready(function () {
     $("#addRowBtn").on("click", function () {
         // Add a new row to the table
         var newRow = '<tr>\
-                        <td contenteditable="true"></td>\
-                        <td contenteditable="true"></td>\
-                        <td>\
-                            <button type="button" class="btn btn-sm btn-danger delete-row">\
-                                <i class="bi bi-trash"></i>\
-                            </button>\
-                            <button type="button" class="btn btn-sm btn-primary edit-row">\
-                                <i class="bi bi-pencil"></i>\
-                            </button>\
-                        </td>\
+                        <td contenteditable="true" style=" font-size: 14px;">Masters</td>\
+                        <td contenteditable="true" style=" font-size: 14px;">Computer Science</td>\
+                        <td class=" d-flex">\
+                        <div  class="edit-row ">\
+                        <img src="../job-application-infosis/images/icon-edit.png" alt="">\
+                    </div>\
+                        <div class=" delete-row pl-3">\
+                            <img src="../job-application-infosis/images/icon-trash.png" alt="">\
+                        </div>\
+                    </td>\
                     </tr>';
         $("#educationalTable tbody").append(newRow);
     });
@@ -65,9 +65,10 @@ function addChip() {
         // Create a new chip
         var newChip = '<div class="chip">' +
             chipText +
-            '<span class="chip-close" onclick="removeChip(this)">×</span>' +
+            '<img class="chip-close"  onclick="removeChip(this)" src="../job-application-infosis/images/icon-close.png" alt=""></img>' +
             '</div>';
         $("#chipsContainer").append(newChip);
+
     }
 }
 
@@ -78,6 +79,22 @@ function showMore() {
 
 // Example function for handling Submit button click
 function submitForm() {
+      // Create a JavaScript object with form values
+      var formData = {
+        jobTitle: document.getElementById("jobTitle").value,
+        email: document.getElementById("email").value,
+        requestDate: document.getElementById("requestDate").value,
+        requestTime: document.getElementById("requestTime").value,
+        location: document.getElementById("location").value,
+        quarter: document.getElementById("quarter").value,
+        primarySkills: document.getElementById("primarySkills").value
+    };
+
+    // Convert the object to JSON
+    var jsonData = JSON.stringify(formData);
+
+    // Log or send the JSON data as needed
+    console.log(jsonData);
     alert("Form submitted!"); // Replace this with your logic
 }
 
@@ -86,3 +103,24 @@ function cancelAction() {
     alert("Action canceled!"); // Replace this with your logic
 }
 
+
+function validateJobDetailsForm() {
+    var jobTitle = document.getElementById("jobTitle").value;
+    var email = document.getElementById("email").value;
+    var requestDate = document.getElementById("requestDate").value;
+    var requestTime = document.getElementById("requestTime").value;
+    var location = document.getElementById("location").value;
+    var quarter = document.getElementById("quarter").value;
+    var primarySkills = document.getElementById("primarySkills").value;
+
+    // Simple validation, you can add more complex validation as needed
+    if (jobTitle.trim() === "" || email.trim() === "" || requestDate.trim() === "" ||
+        requestTime.trim() === "" || location.trim() === "" || quarter.trim() === "" || primarySkills.trim() === "") {
+        document.getElementById("jobDetailsErrorMessage").innerText = "All fields are required!";
+        return false;
+    }
+    
+    submitForm();
+   return true;
+
+}
