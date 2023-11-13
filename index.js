@@ -1,21 +1,18 @@
 $(document).ready(function () {
     // Add Row Button Click Event
-    $("#addRowBtn").on("click", function () {
-        // Add a new row to the table
+    $("#addRowBtn").on("click", function () { 
+        // Add a new row to the table 
         const newRow = '<tr class="tr-hover">\
-                        <td contenteditable="true" style=" font-size: 14px;">Masters</td>\
-                        <td contenteditable="true" style=" font-size: 14px;">Computer Science</td>\
-                        <td class=" d-flex">\
-                        <div  class="edit-row ">\
-                        <img src="../job-application-infosis/images/icon-edit.png" alt="">\
-                    </div>\
-                        <div class=" delete-row pl-3">\
-                            <img src="../job-application-infosis/images/icon-trash.png" alt="">\
-                        </div>\
-                    </td>\
-                    </tr>';
-        $("#educationalTable tbody").append(newRow);
-    });
+        <td contenteditable="true" style=" font-size: 14px;">Masters</td>\
+        <td contenteditable="true" style=" font-size: 14px;">Computer Science</td>\
+        <td class=" d-flex">\ <div class="edit-row ">\
+        <img src="./images/icon-edit.png" alt="edit icon">\
+        </div>\ <div class=" delete-row pl-3">\
+        <img src="./images/icon-trash.png" alt="delete icon">\
+        </div>\
+        </td>\
+        </tr>';
+         $("#educationalTable tbody").append(newRow); });
 
     // Delete Row Button Click Event
     $("#educationalTable").on("click", ".delete-row", function () {
