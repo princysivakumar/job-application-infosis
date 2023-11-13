@@ -3,9 +3,10 @@ $(document).ready(function () {
     $("#addRowBtn").on("click", function () { 
         // Add a new row to the table 
         const newRow = '<tr class="tr-hover">\
-        <td contenteditable="true" style=" font-size: 14px;">Masters</td>\
-        <td contenteditable="true" style=" font-size: 14px;">Computer Science</td>\
-        <td class=" d-flex">\ <div class="edit-row ">\
+        <td id="editableContent1" contenteditable="false" class="font-size-default">Masters</td>\
+        <td id="editableContent2" contenteditable="false"  class="font-size-default">Computer Science</td>\
+        <td class=" d-flex">\
+        <div class="edit-row " onclick="toggleEdit()">\
         <img src="./images/icon-edit.png" alt="edit icon">\
         </div>\ <div class=" delete-row pl-3">\
         <img src="./images/icon-trash.png" alt="delete icon">\
@@ -62,7 +63,7 @@ function addChip() {
         // Create a new chip
         const newChip = '<div class="chip">' +
             chipText +
-            '<img class="chip-close"  onclick="removeChip(this)" src="../job-application-infosis/images/icon-close.png" alt=""></img>' +
+            '<img class="chip-close"  onclick="removeChip(this)" src="./images/icon-close.png" alt=""></img>' +
             '</div>';
         $("#chipsContainer").append(newChip);
 
@@ -118,24 +119,27 @@ function validateJobDetailsForm() {
     }
     
     submitForm();
-   
+   return true;
 
 }
 
 function toggleEdit() {
-    var editableContent = document.getElementById('editableContent');
-    
+    var editableContent1 = document.getElementById('editableContent1');
+    var editableContent2 = document.getElementById('editableContent2');
     // Toggle the contentEditable attribute
-    var isEditable = editableContent.contentEditable === 'true';
-    editableContent.contentEditable = isEditable ? 'false' : 'true';
+    var isEditable = editableContent1.contentEditable === 'true';
+    editableContent1.contentEditable = isEditable ? 'false' : 'true';
+
+    var isEditable2 = editableContent2.contentEditable === 'true';
+    editableContent2.contentEditable = isEditable2 ? 'false' : 'true';
     
     // You can also add styles or perform other actions based on the edit state
-    if (isEditable) {
-        // Add styles when in edit mode
-        editableContent.style.backgroundColor = '#D3D3D3';
-    } else {
-        // Remove styles when not in edit mode
-        editableContent.style.backgroundColor = 'white';
-    }
+    // if (isEditable) {
+    //     // Add styles when in edit mode
+    //     editableContent.style.backgroundColor = '#D3D3D3';
+    // } else {
+    //     // Remove styles when not in edit mode
+    //     editableContent.style.backgroundColor = 'white';
+    // }
 }
 
