@@ -2,7 +2,7 @@ $(document).ready(function () {
     // Add Row Button Click Event
     $("#addRowBtn").on("click", function () {
         // Add a new row to the table
-        var newRow = '<tr>\
+        const newRow = '<tr class="tr-hover">\
                         <td contenteditable="true" style=" font-size: 14px;">Masters</td>\
                         <td contenteditable="true" style=" font-size: 14px;">Computer Science</td>\
                         <td class=" d-flex">\
@@ -26,9 +26,9 @@ $(document).ready(function () {
     // Edit Row Button Click Event
     $("#educationalTable").on("click", ".edit-row", function () {
         // Add your edit row logic here
-        var row = $(this).closest("tr");
-        var educationalValue = row.find("td:eq(0)").text();
-        var fieldOfEducationValue = row.find("td:eq(1)").text();
+        const row = $(this).closest("tr");
+        const educationalValue = row.find("td:eq(0)").text();
+        const fieldOfEducationValue = row.find("td:eq(1)").text();
 
         // You can use these values for editing
         console.log("Edit button clicked for Educational: " + educationalValue + ", Field of Education: " + fieldOfEducationValue);
@@ -60,10 +60,10 @@ function removeChip(closeButton) {
 
 // Function to add a new chip
 function addChip() {
-    var chipText = prompt("Enter chip text:");
+    const chipText = prompt("Enter chip text:");
     if (chipText !== null && chipText !== "") {
         // Create a new chip
-        var newChip = '<div class="chip">' +
+        const newChip = '<div class="chip">' +
             chipText +
             '<img class="chip-close"  onclick="removeChip(this)" src="../job-application-infosis/images/icon-close.png" alt=""></img>' +
             '</div>';
@@ -80,7 +80,7 @@ function showMore() {
 // Example function for handling Submit button click
 function submitForm() {
       // Create a JavaScript object with form values
-      var formData = {
+      const formData = {
         jobTitle: document.getElementById("jobTitle").value,
         email: document.getElementById("email").value,
         requestDate: document.getElementById("requestDate").value,
@@ -92,10 +92,10 @@ function submitForm() {
 
     // Convert the object to JSON
     var jsonData = JSON.stringify(formData);
-
     // Log or send the JSON data as needed
     console.log(jsonData);
     alert("Form submitted!"); // Replace this with your logic
+   
 }
 
 // Example function for handling Cancel button click
@@ -105,13 +105,13 @@ function cancelAction() {
 
 
 function validateJobDetailsForm() {
-    var jobTitle = document.getElementById("jobTitle").value;
-    var email = document.getElementById("email").value;
-    var requestDate = document.getElementById("requestDate").value;
-    var requestTime = document.getElementById("requestTime").value;
-    var location = document.getElementById("location").value;
-    var quarter = document.getElementById("quarter").value;
-    var primarySkills = document.getElementById("primarySkills").value;
+    const jobTitle = document.getElementById("jobTitle").value;
+    const email = document.getElementById("email").value;
+    const requestDate = document.getElementById("requestDate").value;
+    const requestTime = document.getElementById("requestTime").value;
+    const location = document.getElementById("location").value;
+    const quarter = document.getElementById("quarter").value;
+    const primarySkills = document.getElementById("primarySkills").value;
 
     // Simple validation, you can add more complex validation as needed
     if (jobTitle.trim() === "" || email.trim() === "" || requestDate.trim() === "" ||
@@ -121,6 +121,24 @@ function validateJobDetailsForm() {
     }
     
     submitForm();
-   return true;
+   
 
 }
+
+function toggleEdit() {
+    var editableContent = document.getElementById('editableContent');
+    
+    // Toggle the contentEditable attribute
+    var isEditable = editableContent.contentEditable === 'true';
+    editableContent.contentEditable = isEditable ? 'false' : 'true';
+    
+    // You can also add styles or perform other actions based on the edit state
+    if (isEditable) {
+        // Add styles when in edit mode
+        editableContent.style.backgroundColor = '#D3D3D3';
+    } else {
+        // Remove styles when not in edit mode
+        editableContent.style.backgroundColor = 'white';
+    }
+}
+

@@ -5,35 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="Princy">
-  <!-- <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico"> -->
   <title>Job Application</title>
   <!-- Bootstrap core CSS -->
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
   <!-- Custom styles for this template -->
   <link href="styles.css" rel="stylesheet">
-  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+WyBPLmxqDPaIqd1a2qjZEPL95owY2z1zA8" crossorigin="anonymous"> -->
-
-  
   <!-- Your existing script tags -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-<!-- <script src="path/to/bootstrap/js/bootstrap.min.js"></script> -->
 
 
 <script src="index.js"></script>
-
-  <style>
-    
-</style>
 </head>
 
 <body>
      <!-- Header -->
     <div class="header">
-       
             <div class="row header-container">
                 <div class="col-3 d-flex justify-content-start align-items-center">
-                   <div> <img  src="../job-application-infosis/images/icon-waffle.png" alt="waffle icon" ></div>
-                    <div class="ml-3"><img  src="../job-application-infosis/images/icon_linkedin.png" alt="linkedIn icon"></div>
+                   <div> <img  src="./images/icon-waffle.png" alt="waffle icon" ></div>
+                    <div class="ml-3"><img  src="./images/icon_linkedin.png" alt="linkedIn icon"></div>
                     
                 </div>
                 <div class="col-6 d-flex justify-content-center ">
@@ -42,17 +32,16 @@
                     </div>
                 </div>
                 <div class="col-3 d-flex justify-content-end align-items-center">
-                    <div><img src="../job-application-infosis/images/Group 11259.png" alt="notify icon"></div>
-                    <div class=" ml-3"> <img src="../job-application-infosis/images/Mask Group 179.png" alt="notify icon"></div>
+                    <div><img src="./images/Group 11259.png" alt="notify icon"></div>
+                    <div class=" ml-3"> <img src="./images/Mask Group 179.png" alt="notify icon"></div>
                    
                 </div>
             </div>
-       
     </div>
 
-    <div class="container2">
-        <form  id="jobDetailsForm" onsubmit="return validateJobDetailsForm()">
-        <div style="font-size: 20px; font-weight: bold; margin-top: 15px; ">Create job request</div>
+    <div class="body-container">
+        <form  id="jobDetailsForm" onsubmit="validateJobDetailsForm()">
+        <div  class="job-heading">Create job request</div>
        
         
        
@@ -60,8 +49,7 @@
             <!-- Left Side -->
             <div class="col-md-8">
                 <!-- First Card with Job Form -->
-                <div class="card" >
-                    
+                <div class="card" >  
                     <div class="row">
                         <div class="col-md-6">
                             <div class="title"  for="jobTitle">Job title</div>
@@ -73,15 +61,15 @@
                         </div>
                     </div>
                     <div class="row mt-4">
-                        <div class="col-md-4 ">
+                        <div class="col-md-3 ">
                             <div class="title"  for="requestDate">Request Date</div>
                             <input type="date" class="form-control custom-form-control" id="requestDate" required>
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-md-3">
                             <div class="title"  for="requestTime">Time</div>
                             <input type="time" class="form-control custom-form-control" id="requestTime" required>
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-md-6">
                             <div class="title"  for="location">Location</div>
                             <input type="text" class="form-control custom-form-control" id="location" required>
                         </div>
@@ -97,7 +85,7 @@
                             </select>
                         </div>
                         <div class="col-md-6">
-                            <div class="title"  for="state">State <img src="../job-application-infosis/images/icon-info.png" alt=""></div>
+                            <div class="title d-flex justify-content-start align-items-center "  for="state">State <img class="ml-1" src="./images/icon-info.png" alt=""></div>
                             <input type="text" class="form-control custom-form-control" id="state" required>
                         </div>
                     </div>
@@ -105,11 +93,12 @@
                         <div class="col-md-12 " >
                             <div class="title" >Primary Skills</div><br>
                             <div class="form-check-inline">
-                                <input type="radio" name="skills" class="form-check-input"  value="React" id="primarySkills" > React
+                                <input type="radio" name="skills" class="form-check-input font-size-default" value="Angular"  id="primarySkills"> Angular
                             </div>
                             <div class="form-check-inline">
-                                <input type="radio" name="skills" class="form-check-input" value="Angular"  id="primarySkills"> Angular
+                                <input type="radio" name="skills" class="form-check-input font-size-default"  value="React" id="primarySkills" > React
                             </div>
+                            
                         </div>
                     </div>
 
@@ -123,21 +112,21 @@
                     <table class="table" id="educationalTable">
                         <thead>
                             <tr>
-                                <th class="no-border-top" style=" font-size: 14px;">Educational</th>
-                                <th class="no-border-top" style=" font-size: 14px;">Field of Education</th>
-                                <th class="no-border-top" style=" font-size: 14px;">Action</th>
+                                <th class="no-border-top font-size-default" >Educational</th>
+                                <th class="no-border-top font-size-default" >Field of Education</th>
+                                <th class="no-border-top font-size-default" >Action</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr >
-                                <td contenteditable="true" style=" font-size: 14px;">Bachelor's Degree</td>
-                                <td contenteditable="true" style=" font-size: 14px;">Computer Science</td>
+                            <tr  class="tr-hover">
+                                <td id="editableContent" contenteditable="false" >Bachelor's Degree</td>
+                                <td   >Computer Science</td>
                                 <td class="d-flex no-border-top">
-                                    <div  class="edit-row ">
-                                        <img src="../job-application-infosis/images/icon-edit.png" alt="edit">
+                                    <div  class="edit-row " onclick="toggleEdit()">
+                                        <img src="./images/icon-edit.png" alt="edit">
                                     </div>
-                                    <div class="delete-row pl-3">
-                                        <img src="../job-application-infosis/images/icon-trash.png" alt="delete">
+                                    <div class="delete-row pl-3 ">
+                                        <img src="./images/icon-trash.png" alt="delete">
                                     </div>
                                    
                                 </td>
@@ -145,8 +134,10 @@
                         </tbody>
                     </table>
 
-                    <div class=" ml-2"  id="addRowBtn" style="font-size: small;"> <img class="mr-1" src="../job-application-infosis/images/icon-add-big.png" alt="add" width="15"> Add New</div>
+                    <div class=" ml-2 font-size-default"  id="addRowBtn"> <img class="mr-1" src="./images/icon-add-big.png" alt="add" width="15"> Add New</div>
                 </div>
+
+                <div class="gray-border"></div>
 
              
                     
@@ -167,7 +158,7 @@
                         <!-- Sample chip -->
                         <div class="chip">
                             Chip Text
-                            <img class="chip-close"  onclick="removeChip(this)" src="../job-application-infosis/images/icon-close.png" alt="">
+                            <img class="chip-close"  onclick="removeChip(this)" src="./images/icon-close.png" alt="">
                         </div>
                     </div>
 
@@ -180,18 +171,18 @@
                     <ul class="support-team-list">
                         <li class="support-team-member">
                             <div class="initials-mask">JS</div>
-                            <div class="person-name ">Jancy Sivakumar</div>
+                            <div class="person-name  ">Jancy Sivakumar</div>
                             <div>
-                                <img src="../job-application-infosis/images/icon-mail.png" alt="">
-                                <img class=" ml-2" src="../job-application-infosis/images/icon-call.png" alt="">
+                                <img src="./images/icon-mail.png" alt="">
+                                <img class=" ml-2" src="./images/icon-call.png" alt="">
                             </div>
                         </li>
                         <li class="support-team-member">
                             <div class="initials-mask">PS</div>
-                            <div class="person-name">Princy Sivakumar</div>
+                            <div class="person-name ">Princy Sivakumar</div>
                         <div>
-                            <img src="../job-application-infosis/images/icon-mail.png" alt="">
-                            <img class=" ml-2" src="../job-application-infosis/images/icon-call.png" alt="">
+                            <img src="./images/icon-mail.png" alt="">
+                            <img class=" ml-2" src="./images/icon-call.png" alt="">
                         </div>
                         </li>
                     </ul>
